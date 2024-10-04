@@ -39,9 +39,9 @@ void inserting_sort(int a[],int n)
             }
             a[j+1]=t;
     }
-}
-
-int main() 
+}       
+    
+int main()
 {
     int n;
     printf("Enter how many no. you want to sort : ");
