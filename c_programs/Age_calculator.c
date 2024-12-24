@@ -11,7 +11,7 @@ int main()
 	int curr_month;
 	int curr_year;
 
-	printf("Enter Bday Day|Month|Year: ");
+	printf("Enter Bday Date : ");
 	scanf("%d %d %d",&date,&month,&year);
 
 	printf("Enter Current Date : ");
