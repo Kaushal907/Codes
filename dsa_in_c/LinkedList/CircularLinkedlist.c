@@ -14,7 +14,7 @@ struct node * create(int n)
 	struct node *f,*l,*t;
 
 	f=NEWNODE;
-	printf("Enter the Data : ");
+	printf("Enter Data : ");
 	scanf("%d",&f->data);
 	f->next=NULL;
 	l=f;
@@ -22,9 +22,9 @@ struct node * create(int n)
 	for(i=2;i<=n;i++)
 	{
 		t=NEWNODE;
-		printf("Enter the Data : ");
+		printf("Enter Data : ");
 		scanf("%d",&t->data);
-		l->next = t;
+		l->next=t;
 		l=l->next;
 		l->next=NULL;
 	}
@@ -32,20 +32,38 @@ struct node * create(int n)
 	return f;
 }
 
+/*
 void display(struct node *f)
 {
 	struct node *t;
 
-	for(t=f;t!=NULL;t=t->next)
-	{
+	t=f;
+	do{
 		printf("%d ",t->data);
-	}
+		t=t->next;
+	}while(t!=f);
 }
+*/
 
-struct node * eraseall(struct node *f)
+void display(struct node *f)
+{
+	struct node *t = f;
+	while (t != NULL)
+	{
+		printf("%d ", t->data);
+		t = t->next;
+	}
+	printf("\n",);
+}
+	
+
+
+struct node *eraseall(struct node *f)
 {
 	struct node *t;
-
+	t=f;
+	f=f->next;
+	t->next=NULL;
 	while(f!=NULL)
 	{
 		t=f;
@@ -57,15 +75,15 @@ struct node * eraseall(struct node *f)
 
 int main()
 {
-	struct node *head = NULL;
+	struct node *head=NULL;
 	int n;
 
-	printf("How many nodes :");
+	printf("How many Nodes : ");
 	scanf("%d",&n);
 
 	head = create(n);
 
-	printf("Linkedlist : ");
+	printf("LinkedList : ");
 	display(head);
 
 	head = eraseall(head);

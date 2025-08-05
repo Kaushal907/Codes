@@ -40,6 +40,21 @@ void display(struct node *f)
 	{
 		printf("%d ",t->data);
 	}
+	printf("\n");
+}
+
+int LengthLL(struct node *f)
+{
+	int cnt;
+	struct node *t;
+
+	cnt=0;
+
+	for(t=f;t!=NULL;t=t->next)
+	{
+		cnt++;
+	}
+	return cnt;
 }
 
 struct node * eraseall(struct node *f)
@@ -58,7 +73,7 @@ struct node * eraseall(struct node *f)
 int main()
 {
 	struct node *head = NULL;
-	int n;
+	int n,cnt;
 
 	printf("How many nodes :");
 	scanf("%d",&n);
@@ -68,6 +83,9 @@ int main()
 	printf("Linkedlist : ");
 	display(head);
 
+	cnt = LengthLL(head);
+	printf("Length %d \n",cnt);
+	
 	head = eraseall(head);
 
 	return 0;

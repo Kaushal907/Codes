@@ -40,6 +40,26 @@ void display(struct node *f)
 	{
 		printf("%d ",t->data);
 	}
+	printf("\n");
+}
+
+void oddeven(struct node *f)
+{
+	int ocnt,ecnt;
+	struct node *t;
+
+	ocnt=0;
+	ecnt=0;
+
+	for(t=f;t!=NULL;t=t->next)
+	{
+		if(t->data%2==0)
+			ecnt++;
+		else
+			ocnt++;
+	}
+	printf("No.of Even Elements in Linkedlist : %d\n",ecnt);
+	printf("No.of Odd Elements in Linkedlist  : %d\n",ocnt);
 }
 
 struct node * eraseall(struct node *f)
@@ -67,6 +87,8 @@ int main()
 
 	printf("Linkedlist : ");
 	display(head);
+
+	oddeven(head);
 
 	head = eraseall(head);
 
